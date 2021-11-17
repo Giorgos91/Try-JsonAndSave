@@ -29,12 +29,12 @@ namespace WindowsFormsApp1
             man.surname = surnameTextBox.Text;
             man.age = int.Parse(ageTextBox.Text);
             string json = JsonConvert.SerializeObject(man);
-            System.IO.File.WriteAllText(@"C:\Users\giorgos\Desktop\tryall.txt",json);
+            System.IO.File.WriteAllText(@"H:\UNIC\COMP-213 Visual Programming\Try-JsonAndSave\tryall.txt", json);
         }
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            string json = System.IO.File.ReadAllText(@"C:\Users\giorgos\Desktop\tryall.txt");
+            string json = System.IO.File.ReadAllText(@"H:\UNIC\COMP-213 Visual Programming\Try-JsonAndSave\tryall.txt");
             people man = JsonConvert.DeserializeObject<people>(json);
 
             MessageBox.Show($"{man.name} and {man.surname} with age {man.age}");
